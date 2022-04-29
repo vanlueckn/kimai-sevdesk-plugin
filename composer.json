@@ -1,0 +1,64 @@
+{
+  "name": "vanlueckn/kimai-sevdesk-plugin",
+  "description": "A plugin for kimai for creating invoices in sevdesk",
+  "homepage": "https://www.kimai.org/store/demo-bundle.html",
+  "type": "kimai-plugin",
+  "version": "0.1",
+  "keywords": [
+    "kimai",
+    "kimai-plugin",
+    "sevdesk",
+    "invoice"
+  ],
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Nils van Lück",
+      "email": "nils@vanlueck.dev",
+      "homepage": "https://vanlueck.dev"
+    }
+  ],
+  "autoload": {
+    "psr-4": {
+      "KimaiPlugin\\KimaiSevdesk\\": ""
+    }
+  },
+  "config": {
+    "platform": {
+      "php": "7.4.0"
+    },
+    "preferred-install": {
+      "*": "dist"
+    },
+    "sort-packages": true,
+    "allow-plugins": {
+      "symfony/flex": true
+    }
+  },
+  "extra": {
+    "kimai": {
+      "require": "1.17",
+      "version": "0.1",
+      "name": "Kimai Sevdesk"
+    }
+  },
+  "scripts": {
+    "codestyle": "php-cs-fixer fix --dry-run --verbose --show-progress=none",
+    "codestyle-fix": "php-cs-fixer fix",
+    "codestyle-check": "vendor/bin/php-cs-fixer fix --dry-run --verbose --config=.php_cs.dist --using-cache=no --show-progress=none --format=checkstyle",
+    "phpstan": "vendor/bin/phpstan analyse . -c phpstan.neon --level=7",
+    "linting": [
+      "composer validate",
+      "@codestyle-check",
+      "@phpstan"
+    ]
+  },
+  "require-dev": {
+    "friendsofphp/php-cs-fixer": "^2.19.3",
+    "kevinpapst/kimai2": "1.17",
+    "phpstan/phpstan": "^1.6",
+    "phpstan/phpstan-doctrine": "^1.3",
+    "symfony/console": "^4.4",
+    "symfony/event-dispatcher": "^4.4"
+  }
+}
