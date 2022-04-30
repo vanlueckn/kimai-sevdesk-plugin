@@ -33,7 +33,7 @@ class ApiClient
     {
         $response = $this->client->request(
             'GET',
-            'https://my.sevdesk.de/api/v1/SevSequence/Factory/getByType?objectType=Invoice&type=RE&token=b4114c0fb8232d6d5a3d8621525afd9f'
+            'https://my.sevdesk.de/api/v1/SevSequence/Factory/getByType?objectType=Invoice&type=RE&token=' . $this->sevdeskConfiguration->getSevdeskApiKey()
         );
 
         $responseObj = json_decode($response->getContent());
