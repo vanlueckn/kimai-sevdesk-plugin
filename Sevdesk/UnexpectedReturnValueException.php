@@ -1,6 +1,6 @@
 <?php
 
-namespace KimaiPlugin\KimaiSevdesk\Sevdesk;
+namespace KimaiPlugin\KimaiSevdeskBundle\Sevdesk;
 
 use Exception;
 use JetBrains\PhpStorm\Pure;

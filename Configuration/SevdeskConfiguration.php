@@ -1,6 +1,6 @@
 <?php
 
-namespace KimaiPlugin\KimaiSevdesk\Configuration;
+namespace KimaiPlugin\KimaiSevdeskBundle\Configuration;
 
 use App\Configuration\SystemConfiguration;
 

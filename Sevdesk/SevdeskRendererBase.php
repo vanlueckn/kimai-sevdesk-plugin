@@ -1,11 +1,11 @@
 <?php
 
-namespace KimaiPlugin\KimaiSevdesk\Sevdesk;
+namespace KimaiPlugin\KimaiSevdeskBundle\Sevdesk;
 
 use App\Export\Base\RendererTrait;
 use App\Export\ExportItemInterface;
 use App\Repository\Query\TimesheetQuery;
-use KimaiPlugin\KimaiSevdesk\Configuration\SevdeskConfiguration;
+use KimaiPlugin\KimaiSevdeskBundle\Configuration\SevdeskConfiguration;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Contracts\HttpClient\Exception\ClientExceptionInterface;
 use Symfony\Contracts\HttpClient\Exception\RedirectionExceptionInterface;

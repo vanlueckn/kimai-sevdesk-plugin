@@ -1,10 +1,10 @@
 <?php
 
-namespace KimaiPlugin\KimaiSevdesk\Sevdesk;
+namespace KimaiPlugin\KimaiSevdeskBundle\Sevdesk;
 
 use App\Export\ExportItemInterface;
 use DateTime;
-use KimaiPlugin\KimaiSevdesk\Configuration\SevdeskConfiguration;
+use KimaiPlugin\KimaiSevdeskBundle\Configuration\SevdeskConfiguration;
 use Symfony\Contracts\HttpClient\Exception\ClientExceptionInterface;
 use Symfony\Contracts\HttpClient\Exception\RedirectionExceptionInterface;
 use Symfony\Contracts\HttpClient\Exception\ServerExceptionInterface;
