@@ -38,7 +38,7 @@ class ApiClient
 
         $responseObj = json_decode($response->getContent());
 
-        if (!$responseObj || !$responseObj->objects || !$responseObj->objects->format || $responseObj->objects->nextSequence) {
+        if (!$responseObj || !$responseObj->objects || !$responseObj->objects->format || !$responseObj->objects->nextSequence) {
             throw new UnexpectedReturnValueException('Unexpected return value');
         }
 
@@ -60,7 +60,6 @@ class ApiClient
     {
         $invoiceParams = [
             'invoice' => [
-                'id' => 0,
                 'objectName' => 'Invoice',
                 'taxType' => 'default',
                 'currency' => 'EUR',
@@ -68,11 +67,11 @@ class ApiClient
                 'taxRate' => $this->sevdeskConfiguration->getTaxRate(),
                 'contact' => [
                     'id' => $this->sevdeskConfiguration->getSevdeskContactId(),
-                    'objectName' => 'contact',
+                    'objectName' => 'Contact',
                 ],
                 'contactPerson' => [
                     'id' => $this->sevdeskConfiguration->getSevdeskContactPersonId(),
-                    'objectName' => 'sevUser',
+                    'objectName' => 'SevUser',
                 ],
                 'smallSettlement' => false,
                 'invoiceDate' => date('d.m.Y'),
@@ -81,9 +80,6 @@ class ApiClient
                 'discount' => 0,
                 'invoiceType' => 'RE',
                 'invoiceNumber' => $this->getNextInvoiceNumber(),
-                'deliveryDateUntil' => 0,
-                'datevConnectOnline' => [],
-                'sendPaymentReceivedNotificationDate' => 0,
                 'mapAll' => true,
             ],
             'invoicePosSave' => $this->formatInvoicePos($items),
@@ -107,8 +103,8 @@ class ApiClient
                     'json' => $invoiceParams
                 ],
             );
+
         } catch (TransportExceptionInterface $e) {
-            //HANDLING
         }
     }
 
@@ -118,13 +114,10 @@ class ApiClient
     private function formatInvoicePos(array $items): array
     {
         $reArray = [];
-
-        $i = 0;
         foreach ($items as $position) {
 
             $reArray[] = [
-                'id' => $i,
-                'objectName' => 'invoicePos',
+                'objectName' => 'InvoicePos',
                 'quantity' => round($this->getDurationInHoursFromBeginAndEnd($position->getBegin(), $position->getEnd()), 2),
                 'price' => $position->getHourlyRate() === null ? 0 : $position->getHourlyRate(),
                 'name' => $this->eventNameBuilder($position),
@@ -136,7 +129,6 @@ class ApiClient
                 'taxRate' => $this->sevdeskConfiguration->getTaxRate(),
                 'mapAll' => true,
             ];
-            $i++;
         }
 
         return $reArray;

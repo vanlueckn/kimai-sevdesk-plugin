@@ -36,7 +36,7 @@ final class SevdeskRenderer implements RendererInterface
         try {
             $sevdeskApiClient->createInvoice($timesheets);
         } catch (UnexpectedReturnValueException|ClientExceptionInterface|ServerExceptionInterface|RedirectionExceptionInterface|TransportExceptionInterface $e) {
-            return new Response('Error creating sevdesk invoice'."\n".$e->getMessage(), 400);
+            return new Response('Error creating sevdesk invoice' . "\n" . $e->getMessage() . "\n" . $e->getTraceAsString(), 400);
         }
 
         return new Response('Sevdesk Rechnung wurde erfolgreich erstellt.');
