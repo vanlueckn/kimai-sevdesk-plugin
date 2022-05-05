@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" version="1.2">
+    <file source-language="en" target-language="de" datatype="plaintext" original="system-configuration.en.xliff">
+        <body>
+            <trans-unit id="692lBYc" resname="sevdesk_config">
+                <source>sevdesk_config</source>
+                <target>Sevdesk Einstellungen</target>
+            </trans-unit>
+            <trans-unit id="iEHZMqu" resname="label.sevdesk.api_key">
+                <source>label.sevdesk.api_key</source>
+                <target>API Key</target>
+            </trans-unit>
+            <trans-unit id="iEHZMqn" resname="label.sevdesk.contact_person_id">
+                <source>label.sevdesk.contact_person_id</source>
+                <target>Kontakt Person ID</target>
+            </trans-unit>
+            <trans-unit id="iEHZMqe" resname="label.sevdesk.tax_rate">
+                <source>label.sevdesk.tax_rate</source>
+                <target>Steuerrate</target>
+            </trans-unit>
+            <trans-unit id="iEHZMqw" resname="label.sevdesk.contact_id">
+                <source>label.sevdesk.contact_id</source>
+                <target>Kontakt ID</target>
+            </trans-unit>
+            <trans-unit id="iEHZMqq" resname="label.sevdesk.hour_unit_id">
+                <source>label.sevdesk.hour_unit_id</source>
+                <target>Stunden Einheit ID</target>
+            </trans-unit>
+        </body>
+    </file>
+</xliff>
