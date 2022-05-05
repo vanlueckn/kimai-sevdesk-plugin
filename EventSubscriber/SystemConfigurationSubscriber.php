@@ -20,64 +20,35 @@ class SystemConfigurationSubscriber implements EventSubscriberInterface
     public function onSystemConfiguration(SystemConfigurationEvent $event)
     {
         $event->addConfiguration(
-            (new SystemConfigurationModel())
-                ->setSection('sevdesk_config')
+            (new SystemConfigurationModel('sevdesk_config'))
                 ->setConfiguration([
                     (new Configuration())
                         ->setName('sevdesk.api_key')
-                        ->setLabel('Sevdesk API-Key')
+                        ->setLabel('sevdesk.api_key')
                         ->setTranslationDomain('system-configuration')
                         ->setRequired(false)
                         ->setType(TextType::class),
-                ])
-        );
-
-        $event->addConfiguration(
-            (new SystemConfigurationModel())
-                ->setSection('sevdesk_config')
-                ->setConfiguration([
                     (new Configuration())
                         ->setName('sevdesk.contact_person_id')
-                        ->setLabel('Sevdesk Contact Person ID')
+                        ->setLabel('sevdesk.contact_person_id')
                         ->setTranslationDomain('system-configuration')
                         ->setRequired(false)
                         ->setType(TextType::class),
-                ])
-        );
-
-        $event->addConfiguration(
-            (new SystemConfigurationModel())
-                ->setSection('sevdesk_config')
-                ->setConfiguration([
                     (new Configuration())
                         ->setName('sevdesk.tax_rate')
-                        ->setLabel('Sevdesk Tax Rate')
+                        ->setLabel('sevdesk.tax_rate')
                         ->setTranslationDomain('system-configuration')
                         ->setRequired(false)
                         ->setType(TextType::class),
-                ])
-        );
-
-        $event->addConfiguration(
-            (new SystemConfigurationModel())
-                ->setSection('sevdesk_config')
-                ->setConfiguration([
                     (new Configuration())
                         ->setName('sevdesk.contact_id')
-                        ->setLabel('Sevdesk Contact ID')
+                        ->setLabel('sevdesk.contact_id')
                         ->setTranslationDomain('system-configuration')
                         ->setRequired(false)
                         ->setType(TextType::class),
-                ])
-        );
-
-        $event->addConfiguration(
-            (new SystemConfigurationModel())
-                ->setSection('sevdesk_config')
-                ->setConfiguration([
                     (new Configuration())
                         ->setName('sevdesk.hour_unit_id')
-                        ->setLabel('Sevdesk Hour Unit ID')
+                        ->setLabel('sevdesk.hour_unit_id')
                         ->setTranslationDomain('system-configuration')
                         ->setRequired(false)
                         ->setType(TextType::class),
